@@ -34,6 +34,15 @@ namespace NetCoreLinqToSqlInjection.Controllers
             this.repo.DeleteDoctor(idDoctor);
             return RedirectToAction("Index");
         }
-
+        //public IActionResult Update()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public IActionResult Update(Doctor doc)
+        //{
+        //    this.repo.UpdateDoctor(doc.IdDoctor, doc.Apellido, doc.Especialidad, doc.Salario, doc.IdHospital);
+        //    return RedirectToAction("Index");
+        //}
     }
 }

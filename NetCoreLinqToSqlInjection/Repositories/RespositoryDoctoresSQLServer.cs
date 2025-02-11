@@ -1,16 +1,21 @@
 ﻿using System.Data;
-using Microsoft.AspNetCore.Http.HttpResults;
-using System.Numerics;
 using Microsoft.Data.SqlClient;
 using NetCoreLinqToSqlInjection.Models;
 
 namespace NetCoreLinqToSqlInjection.Repositories
 {
     #region STORED PROCEDURES
-        //create procedure SP_DELETE_DOCTOR(@iddoctor int)
-        //as
-	       // delete from DOCTOR where DOCTOR_NO=@iddoctor
-        //go
+    //create procedure SP_DELETE_DOCTOR(@iddoctor int)
+    //as
+    // delete from DOCTOR where DOCTOR_NO=@iddoctor
+    //go
+    //--------------------------------------
+    //update
+    //create procedure SP_UPDATE_DOCTOR(@idhospital int, @iddoctor int, @apellido nvarchar(50), @especialidad nvarchar(50), @salario int)
+    //as
+	   // update DOCTOR set HOSPITAL_COD = @idhospital, DOCTOR_NO = @iddoctor, APELLIDO = @apellido, ESPECIALIDAD = @especialidad, SALARIO = @salario
+    //go
+
     #endregion
 
     public class RepositoryDoctoresSQLServer: IRepositoryDoctores //indicamos que heredamos de la interface creada -> para adaptarlo a oracle
@@ -77,5 +82,21 @@ namespace NetCoreLinqToSqlInjection.Repositories
             this.cn.Close();
             this.com.Parameters.Clear();
         }
+
+        //public void UpdateDoctor(int idDoctor, string apellido, string especialidad, int salario, int idHospital)
+        //{
+        //    string sql = "SP_UPDATE_DOCTOR";
+        //    this.com.Parameters.AddWithValue("@iddoctor", idDoctor);
+        //    this.com.Parameters.AddWithValue("@apellido", apellido);
+        //    this.com.Parameters.AddWithValue("@especialidad", especialidad);
+        //    this.com.Parameters.AddWithValue("@salario", salario);
+        //    this.com.Parameters.AddWithValue("@idhospital", idHospital); 
+        //    this.com.CommandType = CommandType.StoredProcedure;
+        //    this.com.CommandText = sql;
+        //    this.cn.Open();
+        //    this.com.ExecuteNonQuery();
+        //    this.cn.Close();
+        //    this.com.Parameters.Clear();
+        //}
     }
 }

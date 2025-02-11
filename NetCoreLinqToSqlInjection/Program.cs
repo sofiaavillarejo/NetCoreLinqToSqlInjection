@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //INYECTAMOS NUESTRA INTERFACE Y LA CLASE
-builder.Services.AddTransient<IRepositoryDoctores, RepositoryDoctoresOracle>();
+builder.Services.AddTransient<IRepositoryDoctores, RepositoryDoctoresOracle>(); //ORACLE
+//builder.Services.AddTransient<IRepositoryDoctores, RepositoryDoctoresSQLServer>(); //SQL
 
 //RESOLVEMOS EL SERVICIO COCHE
 //builder.Services.AddTransient<Coche>();

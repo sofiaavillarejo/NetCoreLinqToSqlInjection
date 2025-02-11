@@ -89,5 +89,9 @@ namespace NetCoreLinqToSqlInjection.Repositories
             this.com.Parameters.Clear();
         }
 
+        //public void UpdateDoctor(int idDoctor, string apellido, string especialidad, int salario, int idHospital)
+        //{
+            
+        //}
     }
 }

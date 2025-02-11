@@ -9,5 +9,6 @@ namespace NetCoreLinqToSqlInjection.Repositories
 
         void InsertDoctor(int idDoctor, string apellido, string especialidad, int salario, int idHospital);
         void DeleteDoctor(int idDoctor);
+        //void UpdateDoctor(int idDoctor, string apellido, string especialidad, int salario, int idHospital);
     }
 }
